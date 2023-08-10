@@ -28,9 +28,9 @@ There are three trace files that we use to test the simulator. Their names are �
 
 The trace files are in ASCII format, so they are in human-readable form. Each line in the trace file represents a single memory reference and contains two numbers: a reference type, which is a number between 0–2, and a memory address. All other text following these two numbers are ignored by our simulator. The reference number specifies what type of memory reference is being performed with the following encoding:
 
-0 Data load reference
-1 Data store reference
-2 Instruction load reference
+- 0 Data load reference
+- 1 Data store reference
+- 2 Instruction load reference
 
 The number following the reference type is the byte address of the memory reference itself. This number is in hexadecimal format, and specifies a 32-bit byte address in the range 0-0xffffffff, inclusive.
 
@@ -56,9 +56,10 @@ We should keep in mind that by implementing a set associative cache whose associ
 Our program reads inputs in the following form. Note that entries marked with <>s will be replaced with user-defined inputs while the dashes are constant and will be entered to separate the inputs from each other.
 First, our program reads a line as shown below:
 
-<block size> - <unified or separated> - <associativity> - <write policy> - <write_miss policy>
+<code><block size> - <unified or separated> - <associativity> - <write policy> - <write_miss policy></code>
 
 Explanation for each of the entries:
+
 - <block size>: Cache’s block size in bytes which should be a power of 2. (e.g. 8, 64, 1024...)
 - <unified or separated>: An indicator of cache’s architecture. “0” Denotes Von Neumann and “1” denotes Harvard.
 - <associativity>: An integer indicating how associative the cache is. Remember that the cache’s size (explained shortly) should be divisible by its associativity.
