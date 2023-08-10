@@ -12,6 +12,7 @@ The type of simulator we have built is known as a trace-driven simulator because
 For more information on write policies and write-miss policies we can use the links below:
 
 https://en.wikipedia.org/wiki/Cache_(computing)#Writing_policies
+
 https://www.geeksforgeeks.org/write-through-and-write-back-in-cache/
 
 In addition to implementing the functionalities listed above, our simulator also collects and reports several statistics that will be used to verify the correctness of the simulator. In particular, our simulator tracks:
