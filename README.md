@@ -56,23 +56,23 @@ We should keep in mind that by implementing a set associative cache whose associ
 Our program reads inputs in the following form. Note that entries marked with <>s will be replaced with user-defined inputs while the dashes are constant and will be entered to separate the inputs from each other.
 First, our program reads a line as shown below:
 
-<code><block size> - <unified or separated> - <associativity> - <write policy> - <write_miss policy></code>
+[block size] - [unified or separated] - [associativity] - [write policy] - [write_miss policy]
 
 Explanation for each of the entries:
 
-- <block size>: Cache’s block size in bytes which should be a power of 2. (e.g. 8, 64, 1024...)
-- <unified or separated>: An indicator of cache’s architecture. “0” Denotes Von Neumann and “1” denotes Harvard.
-- <associativity>: An integer indicating how associative the cache is. Remember that the cache’s size (explained shortly) should be divisible by its associativity.
-- <write policy>: A string that should be either “wb” (write-back) or “wt” (write-through).
-- <write_miss policy>: A string that should be either “wa” (write-allocate) or “nw” (no-write allocate)
+- [block size]: Cache’s block size in bytes which should be a power of 2. (e.g. 8, 64, 1024...)
+- [unified or separated]: An indicator of cache’s architecture. “0” Denotes Von Neumann and “1” denotes Harvard.
+- [associativity]: An integer indicating how associative the cache is. Remember that the cache’s size (explained shortly) should be divisible by its associativity.
+- [write policy]: A string that should be either “wb” (write-back) or “wt” (write-through).
+- [write_miss policy]: A string that should be either “wa” (write-allocate) or “nw” (no-write allocate)
 
-Then, if <unified or separated> is 0, your program should read a line as follows:
+Then, if [unified or separated] is 0, your program should read a line as follows:
 
-<unified size>
+[unified size]
 
 Which is the cache’s size in bytes while being a power of 2. Otherwise, if <unified or separated> is 1, your program should read the following line:
 
-<instruction cache size> - <data cache size>
+[instruction cache size] - [data cache size]
 
 Both of which are the respective caches’ sizes in bytes while being powers of 2. Then, our program assumes the cache is empty and start reading trace entries as specified before. Some examples are provided alongside this file for the matter to be even clearer. In some of the examples, there exists a third column which is only a human-readable guidance to explicitly explain the cache’s response to the requests and is of no other value.
 
