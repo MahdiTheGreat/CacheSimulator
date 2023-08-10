@@ -10,6 +10,7 @@ The type of simulator we have built is known as a trace-driven simulator because
 - Write allocate vs. write no-allocate
 
 For more information on write policies and write-miss policies we can use the link below:
+
 https://en.wikipedia.org/wiki/Cache_(computing)#Writing_policies
 
 In addition to implementing the functionalities listed above, our simulator also collects and reports several statistics that will be used to verify the correctness of the simulator. In particular, our simulator tracks:
