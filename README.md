@@ -24,6 +24,12 @@ In addition to implementing the functionalities listed above, our simulator also
 - Number of words fetched from memory
 - Number of words copied back to memory
 
+In this project, we want to implement both the Unified I- D-cache and Split I- D-cache. Just because the cache is of Von Neumann type (i.e. Unified), does not mean that input instructions cannot be a read or type 2 instruction instead of data or type 1. In this case, we have a cache for both types of data requests and commands, but the counters of data and commands must be separate (to be printed in the output in their respective fields). This is also evident in the general test case 2.trace, where, although the cache is of the Unified type, in addition to the request to read the data, we also have the request to read the command (indicated by the number 2) and as shown in the output 2.out is observed, instruction access and data access counters are counted separately.
+
+Therefore, whether in the case where the cache is Unified or in the case where it is Split I-D, the data and command counters are separate; But in the case of Split I-D (i.e. Harvard), the caches themselves are also separate.
+
+The noteworthy point in the case of Unified cache is about replace; If there is currently a "data" in a block cache, and an "instruction" wants to replace it (and throw that data out), the value of the replace counter is increased for the "instructions"; And vice versa, if an "instruction" is currently placed in a block cache and a "data" wants to be replaced with it, the value of the replace counter for the "data" will increase.
+
 # Files
 
 There are three trace files that we use to test the simulator. Their names are “spice.trace,” “cc.trace,” and “tex.trace.” These files are the result of tracing the memory reference behavior of the spice circuit simulator, a C compiler, and the TeX text formatting program, respectively. They represent roughly 1 million memory references each. For our testing purposes, we can slice any part of the files and use them as test cases, sincet testing the entirety of any one of these files could take a very long time and would probably use a significant portion of the computer’s resources.
